@@ -63,8 +63,7 @@ func Test_queryKeeper_Enquire(t *testing.T) {
 		args   args
 		want   helpers.QueryResponse
 	}{
-		// TODO: Add test cases.
-		//{"+ve with nil", fields{}, args{testContext, queryRequest{}}, newQueryResponse(queryKeeper{}.mapper.NewCollection(testContext).Fetch(key.NewKey(queryRequestFromInterface(queryRequest{}).AssetID)), nil)}, //TODO: panics with error: `invalid memory address or nil pointer dereference`
+		{"+ve with nil", fields{}, args{testContext, queryRequest{}}, newQueryResponse(queryKeeper{}.mapper.NewCollection(testContext).Fetch(key.NewKey(queryRequestFromInterface(queryRequest{}).AssetID)), nil)}, //TODO: panics with error: `invalid memory address or nil pointer dereference`
 		{"+ve", fields{testMapper}, args{testContext, testQueryRequest}, newQueryResponse(queryKeeper{mapper: testMapper}.mapper.NewCollection(testContext).Fetch(key.NewKey(queryRequestFromInterface(testQueryRequest).AssetID)), nil)},
 	}
 	for _, tt := range tests {
@@ -81,8 +80,6 @@ func Test_queryKeeper_Enquire(t *testing.T) {
 
 func Test_queryKeeper_Initialize(t *testing.T) {
 	testMapper, _, _ := createTestInput(t)
-	//testKeeper := queryKeeper{}
-	//testKeeper.mapper = testMapper
 	type fields struct {
 		mapper helpers.Mapper
 	}
@@ -97,7 +94,6 @@ func Test_queryKeeper_Initialize(t *testing.T) {
 		args   args
 		want   helpers.Keeper
 	}{
-		// TODO: Add test cases.
 		{"+ve with nil", fields{}, args{}, queryKeeper{}},
 		{"+ve", fields{testMapper}, args{testMapper, parameters.Prototype(), []interface{}{}}, queryKeeper{testMapper}},
 	}
