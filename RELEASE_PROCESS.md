@@ -15,19 +15,19 @@ Before making a new _major_ release we do beta and release candidate releases. F
 v1.0.0-beta1 → v1.0.0-beta2 → ... → v1.0.0-rc1 → v1.0.0-rc2 → ... → v1.0.0
 ```
 
-- Release a first beta version on the `master` branch and freeze `master` from receiving any new features. After beta is
+* Release a first beta version on the `master` branch and freeze `master` from receiving any new features. After beta is
   released, we focus on releasing the release candidate:
-    - finish audits and reviews
-    - kick off a large round of simulation testing (e.g. 400 seeds for 2k blocks)
-    - perform functional tests
-    - add more tests
-    - release new beta version as the bugs are discovered and fixed.
-- After the team feels that the `master` works fine we create a `release/vY` branch (going forward known a release
+    * finish audits and reviews
+    * kick off a large round of simulation testing (e.g. 400 seeds for 2k blocks)
+    * perform functional tests
+    * add more tests
+    * release new beta version as the bugs are discovered and fixed.
+* After the team feels that the `master` works fine we create a `release/vY` branch (going forward known a release
   branch), where `Y` is the version number, with the patch part substituted to `x` (eg: 0.42.x, 1.0.x). Ensure the
   release branch is protected so that pushes against the release branch are permitted only by the release manager or
   release coordinator.
-    - **PRs targeting this branch can be merged _only_ when exceptional circumstances arise**
-    - update the GitHub mergify integration by adding instructions for automatically backporting commits from `master`
+    * **PRs targeting this branch can be merged _only_ when exceptional circumstances arise**
+    * update the GitHub mergify integration by adding instructions for automatically backporting commits from `master`
       to the `release/vY` using the `backport/Y` label.
 - In the release branch, prepare a new version section in the `CHANGELOG.md`
     - All links must be link-ified: `$ python ./scripts/linkify_changelog.py CHANGELOG.md`
