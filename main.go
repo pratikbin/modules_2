@@ -120,7 +120,7 @@ func checkBalance(wallet walletInfo) {
 		if err != nil {
 			fmt.Printf("[%d] Failed to query balance. Err: %v \n", routineId, err)
 		}
-		// get balancer of proper denome
+		// get balancer of proper denom
 		walletBalance := balance.AmountOf(chainDenom)
 		fmt.Printf("[%d] %s: balance %s %s\n",
 			routineId, shortWalletAddress, walletBalance, chainDenom)
